@@ -2,7 +2,7 @@
 # https://github.com/firebase/firebase-tools
 
 name: Continuous Integration and Delivery
-'on':
+on:
   push:
     branches: [main]
 
@@ -43,6 +43,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE }}'
+          firebaseServiceAccount: >-
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE 
+            }}
           channelId: live
           projectId: testtypescriptfirebase
