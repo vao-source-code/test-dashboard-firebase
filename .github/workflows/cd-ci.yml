@@ -6,8 +6,7 @@ name: Continuous Integration and Delivery
   push:
     branches: [main]
 
-  
-    
+
 jobs:
   test_and_build: 
     runs-on: ubuntu-latest 
@@ -29,7 +28,7 @@ jobs:
 
   deploy_to_production:
 
-    if: github-ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     needs: test_and_build
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +40,6 @@ jobs:
           name: build
           path: build
       - name: Deploy to firebase hosting
-      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
