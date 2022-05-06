@@ -42,7 +42,7 @@ jobs:
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          repoToken: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE }}'
           firebaseServiceAccount: >-
             ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE 
             }}
