@@ -35,10 +35,8 @@ jobs:
           path: build
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
+          with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: >-
-            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE 
-            }}
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TESTTYPESCRIPTFIREBASE }}'
           channelId: live
           projectId: testtypescriptfirebase
